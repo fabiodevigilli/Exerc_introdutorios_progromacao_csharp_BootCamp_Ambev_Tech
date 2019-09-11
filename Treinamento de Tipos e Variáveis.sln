@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{7C1C74C6-5634-48A2-8E2B-4904311E06C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treinamento de TIpos e Variáveis", "ConsoleApp1\Treinamento de TIpos e Variáveis.csproj", "{7C1C74C6-5634-48A2-8E2B-4904311E06C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
