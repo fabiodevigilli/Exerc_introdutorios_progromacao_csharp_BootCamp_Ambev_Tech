@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estruturas de Repetição + Lista", "Estruturas de Repetição + Lista.csproj", "{316F16DD-F451-4C8C-BEB5-04471FC9B9D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Estruturas de Repetição + Lista - E.P", "Estruturas de Repetição + Lista - E.P.csproj", "{316F16DD-F451-4C8C-BEB5-04471FC9B9D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

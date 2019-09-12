@@ -10,20 +10,28 @@ namespace Estruturas_de_Repetição___Lista
     {
         static void Main(string[] args)
         {
-            /* Var. para gravar a quantidade alunos a serem cadastrados e 
-              var. para concatenar com o nome do aluno */
-            
-            Console.WriteLine("Você deseja visualizar a tabuada de qual número? ");
-            var numTab = Convert.ToInt32(Console.ReadLine());
-             for (int i = 0; i <= numTab; i++)
+
+            Console.WriteLine("Quantos alunos você deseja cadastrar? ");
+            int qtdAlunos = Convert.ToInt32(Console.ReadLine());
+
+             for (int i = 0; i <= qtdAlunos; i++)
 
             {
-                var result = numTab * i;                
-                var texto1 = @"X{i} = {i}";
-                
-              var textoFinal = string.Format(Conso)
 
-            Console.ReadKey();
+                var texto1 = @"Nome do Aluno: {0}
+Idade:{1}
+Turma:{2}";
+
+
+              var textoFinal = string.Format(texto1
+                  , Console.ReadLine()
+                  , Console.ReadLine()
+                  , Console.ReadLine());
+
+
+            Console.WriteLine($@"Aluno Cadastrado: 
+{textoFinal}");
+                Console.ReadLine();
             }
         }
     }
