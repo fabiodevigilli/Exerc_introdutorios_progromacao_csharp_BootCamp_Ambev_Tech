@@ -10,16 +10,19 @@ namespace UtilizandoOFor
     {
         static void Main(string[] args)
         {
-            var nome = "leoleoleoleo";
+            var nome = "The girl has no name";
             var countFind = 0;
-            for (int i = 1; i < 11; i++)
+            Console.WriteLine("Encontre uma palavra de três caracteres: ");
+            var palavra = Console.ReadLine();
+            for (int i = 1; i < (nome.Length - 2); i++)
             {
-                var stringBuilder = $"{nome[i - 1]}-{nome[i]}-{nome[i + 1]}";
-                Console.WriteLine(stringBuilder);
-                if (stringBuilder.Contains("e-o"))
+                var palavraParaComparar = nome[i].ToString() +
+                                          nome[i + 1].ToString() +
+                                          nome[i + 2].ToString();
+                if (palavra == palavraParaComparar)
                     countFind++;
             }
-                Console.WriteLine($"Qauntidade total de 'eo' {countFind}");
+                Console.WriteLine($"Quantidade total de {palavra}: {countFind}");
                 Console.ReadKey();
             
             
