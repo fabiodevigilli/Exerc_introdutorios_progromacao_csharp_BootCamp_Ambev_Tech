@@ -31,7 +31,7 @@ namespace ExercicioUsandoFor
             Console.WriteLine("Palavra Buscada:'QUE'");
             Console.ReadLine();
             var palavra = "que";
-            int i = 1;
+            int i = 0;
             var countfind = 0;
 
             while (i<(nome.Length-2))

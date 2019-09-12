@@ -14,7 +14,7 @@ namespace UtilizandoOFor
             var countFind = 0;
             Console.WriteLine("Encontre uma palavra de três caracteres: ");
             var palavra = Console.ReadLine();
-            for (int i = 1; i < (nome.Length - 2); i++)
+            for (int i = 0; i < (nome.Length - 2); i++)
             {
                 var palavraParaComparar = nome[i].ToString() +
                                           nome[i + 1].ToString() +
