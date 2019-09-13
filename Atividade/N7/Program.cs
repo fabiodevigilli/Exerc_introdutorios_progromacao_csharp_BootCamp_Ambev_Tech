@@ -8,28 +8,21 @@ namespace N7
 {
     class Program
     {
-        static void Main(string[] args, int vogA, int vogE, int vogI, int vogO, int vogU, int vogTodas)
+        static void Main(string[] args)
         {
             var indice = 0;
-            var text = Texto();
             var contador = 0;
-            var CarText = text[contador];
 
 
-            while (indice < (text.Length - 1))
+            Texto();
+
+            while (indice < (Texto().Length - 1))
             {
-                QtdVogais(text);
+                QtdVogais();
                 indice++;
                 contador++;
             }
-            string textFinal;
-            textFinal = $@"SEU TEXTO POSSUI
-{vogA} letas 'a'
-{vogE} letas 'e'
-{vogI} letas 'i'
-{vogO} letas 'o'
-{vogU} letas 'u'
-{vogTodas} vogais";
+        
 
 
         }
@@ -50,9 +43,11 @@ namespace N7
         /// </summary>
         /// <param name="texto"></param>
         /// <returns></returns>
-        private static void QtdVogais(string carText)
+        private static void QtdVogais()
         {
-
+            var text = Texto();
+            var contador = 0;
+            var carText = text[contador];
             int vogA = 0;
             int vogE = 0;
             int vogI = 0;
@@ -63,30 +58,30 @@ namespace N7
 
             switch (carText)
             {
-                case ("a"):
+                case ('a'):
                     vogA++;
                     break;
-                case ("e"):
+                case ('e'):
                     vogE++;
                     break;
-                case ("i"):
+                case ('i'):
                     vogI++;
                     break;
-                case ("o"):
+                case ('o'):
                     vogO++;
                     break;
-                case ("u"):
+                case ('u'):
                     vogU++;
                     break;
-
-                    VogTodas = (vogA + vogE + vogI + vogO + vogU);
+                  VogTodas = (vogA + vogE + vogI + vogO + vogU);
 
             }
 
 
         }
-       
-    }
+  
+        }
+    
  
         
          
