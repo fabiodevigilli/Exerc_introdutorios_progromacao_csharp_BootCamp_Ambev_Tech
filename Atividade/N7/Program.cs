@@ -10,83 +10,70 @@ namespace N7
     {
         static void Main(string[] args)
         {
-            var indice = 0;
-            var contador = 0;
 
-
-            Texto();
-
-            while (indice < (Texto().Length - 1))
-            {
-                QtdVogais();
-                indice++;
-                contador++;
-            }
-        
-
-
-        }
-        /// <summary>
-        /// SOLICITA UM TEXTO E O GRAVA
-        /// </summary>
-        /// <returns></returns>
-        private static string Texto()
-        {
-            Console.WriteLine("-------------- INSIRA UM TEXTO --------------");
+            Console.WriteLine("--------------- INSIRA UM TEXTO ---------------");
             var texto = Console.ReadLine();
-            return texto;
+            Calculo(texto);
+            Console.WriteLine(Calculo(texto));
+            Console.ReadKey();
 
 
         }
-        /// <summary>
-        /// Conta as vogais
-        /// </summary>
-        /// <param name="texto"></param>
-        /// <returns></returns>
-        private static void QtdVogais()
+
+        private static string Calculo(string texto)
         {
-            var text = Texto();
-            var contador = 0;
-            var carText = text[contador];
+            
+            
+            string finalText = string.Empty;
+            int result = 0;
             int vogA = 0;
             int vogE = 0;
             int vogI = 0;
             int vogO = 0;
             int vogU = 0;
-            int VogTodas = 0;
-
-
-            switch (carText)
+            var verificador = 0;
+            
+            while (verificador < (texto.Length -1))
             {
-                case ('a'):
-                    vogA++;
-                    break;
-                case ('e'):
-                    vogE++;
-                    break;
-                case ('i'):
-                    vogI++;
-                    break;
-                case ('o'):
-                    vogO++;
-                    break;
-                case ('u'):
-                    vogU++;
-                    break;
-                  VogTodas = (vogA + vogE + vogI + vogO + vogU);
+                switch (texto[verificador])
+                {
+                    case 'a':
+                        vogA++;
+                        break;
+                    case 'e':
+                        vogE++;
+                        break;
+                    case 'i':
+                        vogI++;
+                        break;
+                    case 'o':
+                        vogO++;
+                        break;
+                    case 'u':
+                        vogU++;
+                        break;
+                         }
 
-            }
+                verificador++;
+                
+    }
+            result = (vogA + vogE + vogI + vogO + vogU);
+            finalText = $@"Este texto contém:
+{vogA} letras'a'
+{vogE} letras'e'
+{vogI} letras'i'
+{vogO} letras'o'
+{vogU} letras'u'
+E um total de {result} vogal(is)
+--------------- APERTE QUALQUER TECLA PARA FECHAR --------------- ";
+                    
 
 
+            return finalText;
+            
         }
-  
-        }
-    
- 
-        
-         
 
 
 
     }
-
+}
