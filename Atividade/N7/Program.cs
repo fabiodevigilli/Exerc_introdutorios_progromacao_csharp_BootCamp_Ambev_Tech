@@ -73,7 +73,7 @@ E um total de {result} vogal(is)
             
         }
 
-
+        //ok
 
     }
 }
