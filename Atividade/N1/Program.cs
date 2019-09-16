@@ -16,7 +16,7 @@ namespace AtividadeSemana1
                      
         }
         /// <summary>
-        /// Dá boas vindas.
+        /// RETORNA O TEXTO DE BOAS VINDAS
         /// </summary>
         private static void TextoInicial ()
         {

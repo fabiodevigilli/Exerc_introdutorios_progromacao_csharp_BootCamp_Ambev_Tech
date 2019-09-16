@@ -19,7 +19,11 @@ namespace N7
 
 
         }
-
+        /// <summary>
+        /// RETONAR O CÁLCULO DA QUANTIDADE TOTAL DE VOGAIS DO TEXTO
+        /// </summary>
+        /// <param name="texto"></param>
+        /// <returns></returns>
         private static string Calculo(string texto)
         {
             
@@ -33,7 +37,7 @@ namespace N7
             int vogU = 0;
             var verificador = 0;
             
-            while (verificador < (texto.Length -1))
+            while (verificador < (texto.Length))
             {
                 switch (texto[verificador])
                 {
@@ -73,7 +77,7 @@ E um total de {result} vogal(is)
             
         }
 
-        //ok
+        
 
     }
 }
