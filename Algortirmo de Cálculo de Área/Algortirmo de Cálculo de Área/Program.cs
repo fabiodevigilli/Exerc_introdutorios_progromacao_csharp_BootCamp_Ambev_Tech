@@ -29,7 +29,7 @@ namespace Algortirmo_de_Cálculo_de_Área
                     Console.WriteLine("Qual é a medida da altura?");
                     altura = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Qual é a medida da base?");
-                    bse = Convert.ToDouble
+                    bse = Convert.ToDouble(Console.ReadLine());
                     result = bse * altura;
                     Console.WriteLine("O resultado é: " + result + "M²");
                     break;
@@ -37,6 +37,7 @@ namespace Algortirmo_de_Cálculo_de_Área
                     Console.WriteLine("Qual é a medida da altura?");
                     altura = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Qual é a medida da base?");
+                    bse = Convert.ToDouble(Console.ReadLine());
                     result = bse * altura;
                     Console.WriteLine("O resultado é: " + result + "M²");
                     break;
