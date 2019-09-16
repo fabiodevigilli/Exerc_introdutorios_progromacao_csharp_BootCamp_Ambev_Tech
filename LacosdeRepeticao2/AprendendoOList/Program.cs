@@ -10,9 +10,10 @@ namespace AprendendoOList
     {
         static List<string> minhaListaPulgmatica = new List<string>()
             {
+               
                 "Felipe",
                 "Irineu",
-                "Serilop"
+                "Serilop"               
             };
         static void Main(string[] args)
         {
@@ -28,9 +29,20 @@ namespace AprendendoOList
         /// </summary>
         private static void AdicionarItensALista()
         {
+           
+            Console.Clear();
             Console.WriteLine("Informe um nome:");
             minhaListaPulgmatica.Add(Console.ReadLine());
             Console.Clear();
+            Console.WriteLine("Deseja informar mais valores? sim(S) não(N)");
+            //TO LOWER CONVERTE PARA MINÚSCULO, TOUPPER
+            if (Console.ReadKey().KeyChar.ToString().ToLower() == "s")
+                AdicionarItensALista();
+            else
+            {
+
+            }
+
         }
         
         /// <summary>
@@ -38,8 +50,9 @@ namespace AprendendoOList
         /// </summary>
         private static void ListaInformacoes()
         {
-            foreach (var item in minhaListaPulgmatica)
-                Console.WriteLine(item);
+            Console.WriteLine("ITENS DA LISTA:");
+            foreach (var item in minhaListaPulgmatica) 
+                Console.WriteLine($"Nome{item} foi adicionado a lista");
             Console.ReadKey();
         }
     }
