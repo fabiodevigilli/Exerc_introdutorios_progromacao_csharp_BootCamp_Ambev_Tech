@@ -10,6 +10,7 @@ namespace InicandoForEach
     {
         static void Main(string[] args)
         {
+            ForEachComSplit();
            
         }
         /// <summary>
@@ -29,5 +30,23 @@ namespace InicandoForEach
             }
             Console.ReadKey();
         }
+    
+
+    private static void ForEachComSplit()
+    {
+        var conteudoDoTexto = "qualquer coisa que foi escrita no quadro";
+        Console.WriteLine("Informe a palavra a ser buscada: ");
+        var palavra = Console.ReadLine();
+            // SEPARAMOS O TEXTO POR PALAVRAS ATRAVÉS DO ESPAÇO DO SPLIT
+        var conteudoTextSplit = conteudoDoTexto.Split(' ');
+            foreach (var item in conteudoTextSplit)
+            {
+                if (palavra == item)
+                    Console.WriteLine("Palavra encontrada com sucesso!");
+            }
+            Console.ReadKey();
+    }
+
+
     }
 }
