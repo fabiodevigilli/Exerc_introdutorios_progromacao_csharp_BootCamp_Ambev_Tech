@@ -88,17 +88,39 @@ namespace ForEachNaLista
             minhaLista.Add(2.42);
             minhaLista.Add(0.05);
 
-            minhaLista.ForEach(meuDecimal => Console.WriteLine(meuDecimal.ToString("C")+ " " + Dolar(meuDecimal)));
+
+            minhaLista.ForEach(meuDecimal => Console.WriteLine(meuDecimal.ToString("C") + " " + (meuDecimal) + " "); ;
 
         }
         private static string Dolar(double meuNumero)
         {
 
-            return (meuNumero / 4.5008).ToString("c", CultureInfo.CreateSpecificCulture("en-US")) +" "+ (meuNumero / 0.38).ToString("c", CultureInfo.CreateSpecificCulture("ja-JP")) +" "+ (meuNumero / 4.53).ToString("EU 0.000") +" "+ (meuNumero / 42018.10).ToString("BTC 00.00000000000");
+            return (meuNumero / 4.5008).ToString("c", CultureInfo.CreateSpecificCulture("en-US"));
                
         }
+        private static string Dolar(double meuNumero)
 
 
+        {
+
+            return (meuNumero / 0.038).ToString("c", CultureInfo.CreateSpecificCulture("ja-JP"));
+        }
+        private static string Euro(double meuNumero)
+
+        {
+            Console.OutputEncoding = Encoding.Default;
+           return (meuNumero / 4.53).ToString("c", CultureInfo.CreateSpecificCulture("fr-FR"));
+        }
+
+        /// <summary>
+        /// Método do professor
+        /// </summary>
+        /// <param name="meuNumero"></param>
+        /// <returns></returns>
+        private static string BTC(double meuNumero)
+        {
+            return (meuNumero / 41997.10).ToString("C10", CultureInfo.CreateSpecificCulture("en-US")).Replace("$", "BTC");
+        }
 
 
     }
