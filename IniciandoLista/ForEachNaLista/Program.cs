@@ -88,15 +88,20 @@ namespace ForEachNaLista
             minhaLista.Add(2.42);
             minhaLista.Add(0.05);
 
-            minhaLista.ForEach(meuDecimal => Console.WriteLine(meuDecimal.ToString("C")+ " \n" + FNDD(meuDecimal)));
+            minhaLista.ForEach(meuDecimal => Console.WriteLine(meuDecimal.ToString("C")+ " " + Dolar(meuDecimal)));
 
         }
-        private static string FNDD(double meuNumero)
+        private static string Dolar(double meuNumero)
         {
-            
-            return (meuNumero / 4.5008).ToString("c", CultureInfo.CreateSpecificCulture("en-US"));
+
+            return (meuNumero / 4.5008).ToString("c", CultureInfo.CreateSpecificCulture("en-US")) +" "+ (meuNumero / 0.38).ToString("c", CultureInfo.CreateSpecificCulture("ja-JP")) +" "+ (meuNumero / 4.53).ToString("EU 0.000") +" "+ (meuNumero / 42018.10).ToString("BTC 00.00000000000");
+               
         }
-        }
-        
+
+
+
+
     }
+
+}
 
