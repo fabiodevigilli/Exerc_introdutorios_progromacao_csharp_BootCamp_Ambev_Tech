@@ -11,7 +11,8 @@ namespace ForEachNaLista
         static void Main(string[] args)
         {
             ListaInt();
-            
+            Console.ReadKey();
+
         }
         /// <summary>
         /// Mostra a lista de Datas
@@ -24,8 +25,7 @@ namespace ForEachNaLista
             minhaLista.Add(new DateTime(2019, 09, 19));
             minhaLista.Add(new DateTime(2019, 09, 20).AddDays(99));
             minhaLista.ForEach(minhaData => Console.WriteLine(minhaData));
-            Console.ReadKey();
-
+           
         }
         /// <summary>
         /// Mostra a lista de marcas
@@ -47,7 +47,7 @@ namespace ForEachNaLista
                 */
 
 
-                Console.ReadKey();
+             
             }
         /// <summary>
         /// Mostra uma lista de inteiros
@@ -66,7 +66,7 @@ namespace ForEachNaLista
             ListaInt.Add(9);
             ListaInt.Add(10);
             ListaInt.ForEach(itens => Console.WriteLine(itens));
-            Console.ReadKey();
+            
 
 
             {
