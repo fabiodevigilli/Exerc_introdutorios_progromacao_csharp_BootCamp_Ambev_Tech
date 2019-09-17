@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace ForEachNaLista
 {
@@ -10,7 +12,7 @@ namespace ForEachNaLista
     {
         static void Main(string[] args)
         {
-            ListaInt();
+            ListaDeDecimais();
             Console.ReadKey();
 
         }
@@ -24,7 +26,7 @@ namespace ForEachNaLista
             minhaLista.Add(new DateTime(2019, 09, 18));
             minhaLista.Add(new DateTime(2019, 09, 19));
             minhaLista.Add(new DateTime(2019, 09, 20).AddDays(99));
-            minhaLista.ForEach(minhaData => Console.WriteLine(minhaData));
+            minhaLista.ForEach(minhaData => Console.WriteLine(minhaData.ToString("yyyy/MMM/dd")));
            
         }
         /// <summary>
@@ -66,13 +68,33 @@ namespace ForEachNaLista
             ListaInt.Add(9);
             ListaInt.Add(10);
             ListaInt.ForEach(itens => Console.WriteLine(itens));
-            
+
 
 
             {
 
             }
 
+        }
+
+        /// <summary>
+        /// Mostra a lista de números decimais
+        /// </summary>
+        private static void ListaDeDecimais()
+        {
+            var minhaLista = new List<double>();
+            minhaLista.Add(3.75);
+            minhaLista.Add(4.98);
+            minhaLista.Add(2.42);
+            minhaLista.Add(0.05);
+
+            minhaLista.ForEach(meuDecimal => Console.WriteLine(meuDecimal.ToString("C")+ " \n" + FNDD(meuDecimal)));
+
+        }
+        private static string FNDD(double meuNumero)
+        {
+            
+            return (meuNumero / 4.5008).ToString("c", CultureInfo.CreateSpecificCulture("en-US"));
         }
         }
         
