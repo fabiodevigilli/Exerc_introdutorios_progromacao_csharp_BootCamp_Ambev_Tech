@@ -11,6 +11,7 @@ namespace Metodos
         static void Main(string[] args)
         {
             Arvore();
+            CalculoArea();
         }
 
         /// <summary>
@@ -36,25 +37,45 @@ namespace Metodos
        
         }
 
-        public static void Arvore()
+        
+        public static void CalculoArea()
         {
 
-
-            Console.WriteLine("    ()   ");
-            Console.WriteLine("   (  )  ");
-            Console.WriteLine("  (    )  ");
-            Console.WriteLine(" (      ) ");
-            Console.WriteLine(" (      ) ");
-            Console.WriteLine("    ||/º  ");
-            Console.WriteLine("    ||   ");
-            Console.WriteLine("    ||   ");
-            Console.WriteLine("  º/||                           ");
-            Console.WriteLine("__|_||___________________________");
-
-            Console.ReadKey();
-
-
+            var tipo = "0";
+            double bse, altura, result;
+            Console.WriteLine("Qual o tipo de ambiente cuja área deve ser calculada? Digite: " +
+                " 1 - Para QUADRADO" +
+                " || 2 - Para RETÂNGULO" +
+                " || 3 - Para TRIÂNGULO");
+            tipo = Console.ReadLine();
+            switch (tipo)
+            {
+                case "1":
+                    Console.WriteLine("Qual a medida dos lados?");
+                    altura = Convert.ToDouble(Console.ReadLine());
+                    result = altura * altura;
+                    Console.WriteLine("O resultado é: " + result + "M²");
+                    break;
+                case "2":
+                    Console.WriteLine("Qual é a medida da altura?");
+                    altura = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Qual é a medida da base?");
+                    bse = Convert.ToDouble(Console.ReadLine());
+                    result = bse * altura;
+                    Console.WriteLine("O resultado é: " + result + "M²");
+                    break;
+                case "3":
+                    Console.WriteLine("Qual é a medida da altura?");
+                    altura = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Qual é a medida da base?");
+                    bse = Convert.ToDouble(Console.ReadLine());
+                    result = bse * altura;
+                    Console.WriteLine("O resultado é: " + result + "M²");
+                    break;
+            }
+            }
         }
 
     }
-}
+
+
