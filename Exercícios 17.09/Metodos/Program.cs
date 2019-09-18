@@ -23,7 +23,7 @@ namespace Metodos
         }
 
         /// <summary>
-        /// Método mostra uma árvore animada
+        /// MÉTODO MOSTRA UMA ÁRVORE ANIMADA
         /// </summary>
         public static void Arvore()
         {
@@ -121,30 +121,51 @@ ____||______|______________________");
 3 - Para TRIÂNGULO");
             tipo = Console.ReadLine();
             result = 0;
-            switch (tipo)
+          
+                switch (tipo)
+                {
+                    case "1":
+                        Console.WriteLine("Qual a medida dos lados em metros?");
+                        altura = Convert.ToDouble(Console.ReadLine());
+                        result = altura * altura;
+                        break;
+                    case "2":
+                        Console.WriteLine("Qual é a medida da altura em metros?");
+                        altura = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Qual é a medida da base em metros?");
+                        bse = Convert.ToDouble(Console.ReadLine());
+                        result = bse * altura;
+                        break;
+                    case "3":
+                        Console.WriteLine("Qual é a medida da altura em metros?");
+                        altura = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Qual é a medida da base em metros?");
+                        bse = Convert.ToDouble(Console.ReadLine());
+                        result = bse * altura;
+                        break;
+                    default:
+                        Console.WriteLine("VOCÊ NÃO SELECIONOU UMA OPÇÃO VÁLIDA!");
+                        break;
+                }
+            if (result > 0)
+                Console.WriteLine($"A área total é de {result}m²");
+            else
             {
-                case "1":
-                    Console.WriteLine("Qual a medida dos lados?");
-                    altura = Convert.ToDouble(Console.ReadLine());
-                    result = altura * altura;
-                    break;
-                case "2":
-                    Console.WriteLine("Qual é a medida da altura?");
-                    altura = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Qual é a medida da base?");
-                    bse = Convert.ToDouble(Console.ReadLine());
-                    result = bse * altura;
-                    break;
-                case "3":
-                    Console.WriteLine("Qual é a medida da altura?");
-                    altura = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Qual é a medida da base?");
-                    bse = Convert.ToDouble(Console.ReadLine());
-                    result = bse * altura;
-                    break;
+                Console.WriteLine(@"Ainda deseja efetuar o cálculo?
+1 - SIM
+2 - NÃO");
+                var resposta = Console.ReadLine();
+                switch (resposta)
+                {
+                    case "1":
+                        CalculoArea();
+                        break;
+                    case "2":
+                        Console.WriteLine("APERTE QUALQUER TECLA PARA SAIR.");
+                        break;
+                }   
 
             }
-            Console.WriteLine($"A área total é de {result}m²");
             
              }
         /// <summary>
@@ -158,6 +179,7 @@ ____||______|______________________");
             listaCervejas.Add("Norteña");
             listaCervejas.Add("Patagonia");
             listaCervejas.Add("Budweiser");
+            Console.WriteLine("------------- LISTA DE CERVEJAS ------------");
             listaCervejas.ForEach(itemCerveja => Console.WriteLine(itemCerveja));
 
 
@@ -173,6 +195,7 @@ ____||______|______________________");
             listaCarros.Add("Kia");
             listaCarros.Add("Hyundai");
             listaCarros.Add("Honda");
+            Console.WriteLine("------------- LISTA DE MARCAS DE CARROS ------------");
             listaCarros.ForEach(itemCarros => Console.WriteLine(itemCarros));
         }
         }
