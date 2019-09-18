@@ -18,10 +18,13 @@ namespace Acessando_Informação
 
         private static void MenuSistema()
         {
+                        
             Console.WriteLine("Escolha uma das opções do menu: ");
             Console.WriteLine("1 - Calculo de área");
             Console.WriteLine("2 - Mostrar Animação");
-            Console.WriteLine("3 - sair do sistema");
+            Console.WriteLine("3 - Mostrar Lista de Cervejas");
+            Console.WriteLine("4 - Mostrar Lista de Carros");
+            Console.WriteLine("5 - sair do sistema");
 
             var menuEscolhido = int.Parse(Console.ReadLine());
 
@@ -36,17 +39,32 @@ namespace Acessando_Informação
                 case 2:
                     {
                         AnimacoesEmFrames.Arvore();
-                        Console.ReadKey();
+                        MenuSistema();
                     }
 
                     break;
                 case 3:
                     {
+                        ListarCervejas.ListaCervejasME();
+                        MenuSistema();
+
+                    }
+
+                    break;
+                case 4:
+                    {
+                        ListarCarros.ListarCarrosMe();
+                        MenuSistema();
+                    }
+
+                    break;
+                case 5:
+                    {
                         Console.WriteLine("Saindo...");
                         return;
                     }
 
-               }
+            }
         }
 
 
@@ -57,6 +75,10 @@ namespace Acessando_Informação
             var bibliotecaCalculos = new CalculosDeArea();
             Console.WriteLine($"A área é de {bibliotecaCalculos.CalculaAreaQuadrado(ladoQuadrado)}");
             Console.ReadKey();
+            Console.Clear();
+        }
+  
+
         }
     }
-}
+

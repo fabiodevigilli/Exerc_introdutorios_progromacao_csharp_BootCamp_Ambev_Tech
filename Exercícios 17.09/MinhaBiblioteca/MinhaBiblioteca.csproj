@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="AnimacoesEmFrames.cs" />
     <Compile Include="CalculosDeArea.cs" />
+    <Compile Include="ListarCervejas.cs" />
+    <Compile Include="ListarCarros.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
