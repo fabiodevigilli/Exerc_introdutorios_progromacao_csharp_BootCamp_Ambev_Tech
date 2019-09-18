@@ -37,16 +37,16 @@ namespace Metodos
        
         }
 
-        
         public static void CalculoArea()
         {
 
             var tipo = "0";
             double bse, altura, result;
-            Console.WriteLine("Qual o tipo de ambiente cuja área deve ser calculada? Digite: " +
-                " 1 - Para QUADRADO" +
-                " || 2 - Para RETÂNGULO" +
-                " || 3 - Para TRIÂNGULO");
+            result = 0;
+            Console.WriteLine(@"Qual o tipo de ambiente cuja área deve ser calculada? Digite:  
+                 1 - Para QUADRADO 
+                 2 - Para RETÂNGULO
+                 3 - Para TRIÂNGULO");
             tipo = Console.ReadLine();
             switch (tipo)
             {
@@ -72,10 +72,20 @@ namespace Metodos
                     result = bse * altura;
                     Console.WriteLine("O resultado é: " + result + "M²");
                     break;
+                   
             }
-            }
-        }
+            Console.WriteLine($"A área total é de {result}m²");
+         }
+        
+        public static void TrazCerveja()
+    {
+
 
     }
+    }
+
+}
+
+    
 
 
