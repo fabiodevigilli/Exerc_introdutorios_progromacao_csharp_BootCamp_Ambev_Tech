@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3CAFA922-CA24-4C70-9F8E-84427692C454}</ProjectGuid>
+    <ProjectGuid>{17836AE2-721B-4569-B899-F44C4E4BEBEC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Acessando_Informação</RootNamespace>
-    <AssemblyName>Acessando Informação</AssemblyName>
+    <RootNamespace>AcessandoDLLDeTereceiro</RootNamespace>
+    <AssemblyName>AcessandoDLLDeTereceiro</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MinhaBiblioteca, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\svprwy001\alunos\hbsis\PastaDlls\Elora\MinhaBiblioteca.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,12 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MinhaBiblioteca\Minhabiblioteca.csproj">
-      <Project>{18baaf77-6d8a-4c4c-bfcd-a6354602050c}</Project>
-      <Name>Minhabiblioteca</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
