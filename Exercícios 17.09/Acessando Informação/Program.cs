@@ -15,7 +15,9 @@ namespace Acessando_Informação
             MenuSistema();
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// MOSTRA O MENU 
+        /// </summary>
         private static void MenuSistema()
         {
                         
@@ -67,7 +69,9 @@ namespace Acessando_Informação
             }
         }
 
-
+        /// <summary>
+        /// CALCULA A ÁREA TOTAL DE UM QUADRADO
+        /// </summary>
         public static void CalculaArea()
         {
             Console.WriteLine("Informa o lado do quadrado: ");
