@@ -27,9 +27,11 @@ namespace Metodos
         /// </summary>
         public static void Arvore()
         {
-            
 
-            Console.WriteLine(@"    ()   
+            while (true)
+            {
+                
+                Console.WriteLine(@"    ()   
    (  )  
   (    )  
  (      ) 
@@ -39,9 +41,9 @@ namespace Metodos
     ||   
   º/||                           
 __|_||____________________________");
-            Thread.Sleep(70);
-            Console.Clear();
-            Console.WriteLine(@"    ()   
+                Thread.Sleep(75);
+                Console.Clear();
+                Console.WriteLine(@"    ()   
    (  )  
   (    )  
  (      ) 
@@ -51,9 +53,9 @@ __|_||____________________________");
     ||   
   º/||                           
 __|_||____________________________");
-            Thread.Sleep(70);
-            Console.Clear();
-            Console.WriteLine(@"    ()   
+                Thread.Sleep(75);
+                Console.Clear();
+                Console.WriteLine(@"    ()   
    (  )  
   (    )  
  (      ) 
@@ -63,9 +65,9 @@ __|_||____________________________");
     || º  
   º/||                           
 __|_||____________________________");
-            Thread.Sleep(70);
-            Console.Clear();
-            Console.WriteLine(@"    ()   
+                Thread.Sleep(75);
+                Console.Clear();
+                Console.WriteLine(@"    ()   
    (  )  
   (    )  
  (      ) 
@@ -75,9 +77,9 @@ __|_||____________________________");
     ||   
   º/|| º                          
 __|_||____________________________");
-            Thread.Sleep(70);
-            Console.Clear();
-            Console.WriteLine(@"    ()   
+                Thread.Sleep(75);
+                Console.Clear();
+                Console.WriteLine(@"    ()   
    (  )  
   (    )  
  (      ) 
@@ -87,9 +89,9 @@ __|_||____________________________");
     ||   
   º/||                           
 __|_||_o___________________________");
-            Thread.Sleep(70);
-            Console.Clear();
-            Console.WriteLine(@"    ()   
+                Thread.Sleep(75);
+                Console.Clear();
+                Console.WriteLine(@"    ()   
    (  )  
   (    )  
  (      ) 
@@ -99,8 +101,9 @@ __|_||_o___________________________");
     ||      o 
     ||      |/º                    
 ____||______|______________________");
+                
 
-
+            }
 
 
 
@@ -116,9 +119,9 @@ ____||______|______________________");
             var tipo = "0";
             double bse, altura, result;
             Console.WriteLine(@"Qual o tipo de ambiente cuja área deve ser calculada? Digite: 
-1 - Para QUADRADO
+1 - Para QUADRADO EQUILÁTERO
 2 - Para RETÂNGULO 
-3 - Para TRIÂNGULO");
+3 - Para TRIÂNGULO RETÂNGULO");
             tipo = Console.ReadLine();
             result = 0;
           
@@ -141,7 +144,7 @@ ____||______|______________________");
                         altura = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Qual é a medida da base em metros?");
                         bse = Convert.ToDouble(Console.ReadLine());
-                        result = bse * altura;
+                        result = bse * altura/2;
                         break;
                     default:
                         Console.WriteLine("VOCÊ NÃO SELECIONOU UMA OPÇÃO VÁLIDA!");
