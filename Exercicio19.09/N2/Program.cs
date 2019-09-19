@@ -56,6 +56,21 @@ Altura: {Indice.Altura}"));
             Console.ReadLine();
 
 
+            /* POSSIBILIDADE MAIS VIÁVEL MOSTRADA PELO PROFESSOR:
+            var listaPessoa = new List<Pessoa>
+            var objetoPessoa = new Pessoa();
+            console.WriteLine("Informe nome");
+            objetoPessoa.Nome = Console.Readline();
+            console.Writeline("Informe idade");
+            objetoPessoa.Idade = int.Parse(Console.Readline());
+            listaPessoa.Add(objetoPessoa);
+            listaPessoas.ForEach(Indice => Console.WriteLine($@"--------- Usuário Cadastrado ----------
+Nome: {Indice.Nome}
+Idade: {Indice.Idade}*/
+
+
+
+
 
         }
 
