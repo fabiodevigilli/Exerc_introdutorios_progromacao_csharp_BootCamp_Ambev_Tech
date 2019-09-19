@@ -13,5 +13,7 @@ namespace N2.Model
         public int Idade { get; set; }
         public char Genero { get; set; }
         public double Altura { get; set; }
+        public double CPF { get; set; }
+        public double RG { get; set; }
     }
 }

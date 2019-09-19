@@ -12,12 +12,14 @@ namespace N2
     {
         static void Main(string[] args)
         {
+            Formulario();
         }
 
         public static void Formulario()
         {
             Console.WriteLine("Quantas pessoas você deseja cadastrar: ");
             var qtdPessoas = int.Parse(Console.ReadLine());
+            var listaPessoas = new List<Pessoa>();
 
             for (int i = 0; i < qtdPessoas; i++)
             {
@@ -30,26 +32,36 @@ M - Masculino
 F - Feminino
 O - Outro");
                 var genero = Console.ReadKey().KeyChar;
-                Console.WriteLine("Qual a altura?");
+                Console.WriteLine("\nQual a altura?");
                 var altura = double.Parse(Console.ReadLine());
+                
 
-                var listaPessoas = new List<Pessoa>();
+
+
                 listaPessoas.Add(new Pessoa()
                 {
                     Nome = nome,
                     Idade = idade,
                     Genero = genero,
-                    Altura = altura
+                    Altura = altura,
+                    
                 });
-                                                                                 
+                Console.Clear();
             }
+            listaPessoas.ForEach(Indice => Console.WriteLine($@"--------- Usuário Cadastrado ----------
+Nome: {Indice.Nome}
+Idade: {Indice.Idade}
+Gênero: {Indice.Genero}
+Altura: {Indice.Altura}"));
+            Console.ReadLine();
 
-            
 
 
         }
+
     }
 }
+
 
 
 
