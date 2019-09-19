@@ -34,7 +34,7 @@ O - Outro");
                 var genero = Console.ReadKey().KeyChar;
                 Console.WriteLine("\nQual a altura?");
                 var altura = double.Parse(Console.ReadLine());
-                
+
 
 
 
@@ -44,7 +44,7 @@ O - Outro");
                     Idade = idade,
                     Genero = genero,
                     Altura = altura,
-                    
+
                 });
                 Console.Clear();
             }
@@ -56,8 +56,8 @@ Altura: {Indice.Altura}"));
             Console.ReadLine();
 
 
-            /* POSSIBILIDADE MAIS VIÁVEL MOSTRADA PELO PROFESSOR:
-            var listaPessoa = new List<Pessoa>
+            /* POSSIBILIDADE MAIS VIÁVEL MOSTRADA PELO PROFESSOR, O PROFESSOR TAMBÉM APRESENTOU O MESMO CÓDIGO EM FORMA DE MÉTODO. 
+            var listaPessoa = new List<Pessoa>()
             var objetoPessoa = new Pessoa();
             console.WriteLine("Informe nome");
             objetoPessoa.Nome = Console.Readline();
@@ -74,8 +74,13 @@ Idade: {Indice.Idade}*/
 
         }
 
+
+
+
+
     }
 }
+
 
 
 
