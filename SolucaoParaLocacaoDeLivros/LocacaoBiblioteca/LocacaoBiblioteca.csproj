@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Model\Livro.cs" />
+    <Compile Include="Controller\LivrosController.cs" />
     <Compile Include="Model\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

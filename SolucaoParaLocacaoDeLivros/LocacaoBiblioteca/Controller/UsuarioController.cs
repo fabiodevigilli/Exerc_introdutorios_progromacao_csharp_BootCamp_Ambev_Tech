@@ -9,22 +9,31 @@ namespace LocacaoBiblioteca.Controller
 {
     public class UsuarioController
     {
-        /// <summary>
-        /// MÉTODO QUE REALIZA O LOGIN NO SISTEMA
-        /// LOGIN PADRÃO: Admin
-        /// SENHA PADRÃO: Admin
-        /// </summary>
-        /// <param name="login": LOGIN DO USUÁRIO></param>
-        /// <param name="senha": SENHA DO USUÁRIO</param>
-        /// <returns>RETORNA VERDADEIRO QUANDO EXISTIR O USUÁRIO COM ESTE LOGIN E SENHA</returns>
-        public bool LoginSistema(Usuarios usuarios)
-        {
-            if (usuarios.Login == "Admin" && usuarios.Senha == "Admin")
-                return true;
+        public UsuarioController()
+        { 
+        Usuario = new List<Usuarios>();
+            Usuario.Add(new Usuarios()
+            {
+                Login = "Admin",
+                Senha = "Admin"
+            });
 
-            else
-                return false;
+            Usuario.Add(new Usuarios()
+            {
+                Login = "Leo",
+                Senha = "Leo123"
+            });
+
         }
 
+        public bool LoginSistema (UsuarioController Usuario)
+            {
+            return Usuarios
+
+            }
+
+
+    public List<Usuarios> Usuario { get; set; }
     }
 }
+
