@@ -33,6 +33,18 @@ namespace InterfaceBiblioteca
             Console.WriteLine("Menu Sistema");
             Console.WriteLine("0 - Sair");
             Console.WriteLine("1 - Listar Usuários");
+            Console.WriteLine("2 - Listar Usuários");
+            try
+            {
+                var opcaoMenu = int.Parse(Console.ReadLine());
+            switch(opcaoMenu)
+            {
+                case 1:
+                    
+            }
+
+
+
 
         }
         /// <summary>
@@ -51,7 +63,12 @@ namespace InterfaceBiblioteca
             var senhaDoUsuario = Console.ReadLine();
 
         UsuarioController usuarioController = new UsuarioController();
-            return usuarioController.LoginSistema(new Usuarios() { });
+            return usuarioController.LoginSistema(new Usuarios()
+            {
+                Login = loginDoUsuario,
+                Senha = senhaDoUsuario
+            });
+           ;
            
         }
         
