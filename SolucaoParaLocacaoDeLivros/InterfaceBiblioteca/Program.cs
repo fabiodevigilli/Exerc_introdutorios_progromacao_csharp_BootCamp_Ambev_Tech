@@ -47,6 +47,7 @@ namespace InterfaceBiblioteca
                 Console.WriteLine("3 - Cadastrar Livro");
                 Console.WriteLine("4 - Cadastra Usuário");
                 Console.WriteLine("5 - Trocar usuário");
+                Console.WriteLine("6 - Remover usuário");
                 Console.WriteLine("0 - Sair");
 
                 //Aqui vamos pegar numero digitado
@@ -72,11 +73,18 @@ namespace InterfaceBiblioteca
                         while (!RealizaLoginSistema())
                             Console.WriteLine("Login e senha inválidos");
                         break;
+                    case 6:
+                        RemoverUsuarioPeloID();
+                        break;
+
                     default:
                         break;
                 }
             }
         }
+        /// <summary>
+        /// Método que adiciona o usuário 
+        /// </summary>
         private static void AdicionarUsuario()
         {
             Console.WriteLine("Cadastrar usuário dentro do sistema!");
@@ -179,5 +187,19 @@ namespace InterfaceBiblioteca
                 Senha = senhaDoUsuario
             }); 
         }
+
+        private static void RemoverUsuarioPeloID()
+        {
+            Console.WriteLine("Remover o usuário pelo ID no sistema!");
+            //Método que mostra o usuário
+            MostrarUsuarios();
+            Console.WriteLine("Informe o ID para desativar do sistema:");
+            var usuarioId = int.Parse(Console.ReadLine());
+            usuarioController.RemoverUsuarioPorId(usuarioId);
+            Console.WriteLine("Usuário desativado com sucesso");
+            Console.ReadKey();
+
+        }
+
     }
 }
