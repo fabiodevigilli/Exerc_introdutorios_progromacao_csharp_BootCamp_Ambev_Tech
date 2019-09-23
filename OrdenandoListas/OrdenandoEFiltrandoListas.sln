@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CestoDeFrutas", "CestoDeFrutas\CestoDeFrutas.csproj", "{58F0BD69-63C0-4C46-BEBB-8A400B638BB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pessoa", "Pessoa\Pessoa.csproj", "{808FA572-CDE4-4104-B06D-E5A1C21DC97F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58F0BD69-63C0-4C46-BEBB-8A400B638BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F0BD69-63C0-4C46-BEBB-8A400B638BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F0BD69-63C0-4C46-BEBB-8A400B638BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F0BD69-63C0-4C46-BEBB-8A400B638BB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{808FA572-CDE4-4104-B06D-E5A1C21DC97F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{808FA572-CDE4-4104-B06D-E5A1C21DC97F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{808FA572-CDE4-4104-B06D-E5A1C21DC97F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{808FA572-CDE4-4104-B06D-E5A1C21DC97F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {689ABFE5-9F7B-44BD-81AF-F8B3BA9CA60A}
+	EndGlobalSection
+EndGlobal
