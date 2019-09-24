@@ -32,6 +32,12 @@ namespace LocacaoBiblioteca.Model
                 Id = IdContadorLivro++,
                 Nome = "Meu Segundo Livro"
             });
+            ListaDeLivros.Add(new Livro()
+            {
+                //Adiciono o ID contador incrementando o mesmo com ele +1 "++".
+                Id = IdContadorLivro++,
+                Nome = "Meu Terceiro Livro"
+            });
 
             ListaDeUsuarios = new List<Usuario>();
 
