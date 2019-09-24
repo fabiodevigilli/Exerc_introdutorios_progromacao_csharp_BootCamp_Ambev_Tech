@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{71CEAE35-75E6-4404-89F9-F6BD2E79234E}</ProjectGuid>
+    <ProjectGuid>{A35AEA3D-AA8F-498D-AC15-528739906F4B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>InterfaceBiblioteca</RootNamespace>
     <AssemblyName>InterfaceBiblioteca</AssemblyName>
@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LocacaoBiblioteca\LocacaoBiblioteca.csproj">
-      <Project>{e5600227-e489-4768-81da-4c5b368bb543}</Project>
+      <Project>{e6acbed6-71f8-4e11-ae12-1c335b0139e2}</Project>
       <Name>LocacaoBiblioteca</Name>
     </ProjectReference>
   </ItemGroup>

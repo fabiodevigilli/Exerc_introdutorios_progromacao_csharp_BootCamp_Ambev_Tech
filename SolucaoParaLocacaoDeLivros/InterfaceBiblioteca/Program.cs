@@ -12,163 +12,205 @@ namespace InterfaceBiblioteca
     {
         //Instanciamos "Carregamos para memoria" nosso controlador dos livros
         static LivrosController livrosController = new LivrosController();
-
         //Instanciamos "Carregamos para memoria" nosso controlador dos usuarios
-        static UsuarioController usuarioController = new UsuarioController();
-
+        static UsuarioController usuariosController = new UsuarioController();
+        static LocacaoContext locacaoContext = new LocacaoContext();
         static void Main(string[] args)
         {
             Console.WriteLine("SISTEMA DE LOCAÇÃO DE LIVRO 1.0");
 
+            // o ponto de exclamação dentro do while, indica que está recebendo uma condição negativa, neste caso, se !RealizaLoginSistema
+            // for falso, continue no loop.
             //Aqui realizamos a tela de login do nosso sistema
-            while (!RealizaLoginSistema())
-                Console.WriteLine("Login e senha inválidos");
+            LoginDoSistema();
 
             //Realizamos a chamada "invok" do nosso menu do sistema em um metodo
             MostraMenuSistema();
+            Console.ReadKey(true);
+                                               
         }
+
+
         /// <summary>
-        /// Mostra no console o menu  disponivel do sistema.
+        /// Mostra no console o menu disponível do sistema.
         /// </summary>
         private static void MostraMenuSistema()
         {
-            //Iniciamos nossa variavel com o menot valor de int possivel
-            var menuEscolhido = int.MinValue;
+            //Iniciamos nossa variavel com o menor valor de int possivel
+            var opcaoMenu = int.MinValue;
             //Aqui definimos se for diferente de 0 mantemos o sistema aberto se não finalizamos
-            while (menuEscolhido != 0)
+            while (opcaoMenu!=0)
             {
+
                 Console.Clear();
                 Console.WriteLine("SISTEMA DE LOCAÇÃO DE LIVRO 1.0");
 
                 //Mostra as opções de menu dentro do nosso sistema.
-                Console.WriteLine("Menu sistema");
-                Console.WriteLine("1 - Listar usuários");
-                Console.WriteLine("2 - Listar Livros");
-                Console.WriteLine("3 - Cadastrar Livro");
-                Console.WriteLine("4 - Cadastra Usuário");
-                Console.WriteLine("5 - Trocar usuário");
-                Console.WriteLine("6 - Remover usuário");
-                Console.WriteLine("0 - Sair");
+                Console.WriteLine("Menu Sistema");
+                 Console.WriteLine("0 - Sair");
+                 Console.WriteLine("1 - Listar usuários");
+                 Console.WriteLine("2 - Listar livros");
+                 Console.WriteLine("3 - Cadastrar livro");
+                Console.WriteLine("4 - Cadastrar usuários");
+                Console.WriteLine("5 - Remover usuários");
+                Console.WriteLine("6 - Remover livros");
+                Console.WriteLine("7 - Fazer LOGOFF");
 
                 //Aqui vamos pegar numero digitado
-                menuEscolhido = int.Parse(Console.ReadKey(true).KeyChar.ToString());
+                opcaoMenu = int.Parse(Console.ReadKey().KeyChar.ToString());
+
                 //Executar proxima funcao
-                switch (menuEscolhido)
+                switch (opcaoMenu)
                 {
-                    case 1:
+                     case 1:
                         //Realiza a chamada do menu de listagem de usuarios
-                        MostrarUsuarios();
-                        break;
+                        MostrarUsuarios();                        
+                    break;
                     case 2:
                         //Realiza a chamada do menu de listagem de livros
-                        MostrarLivro();
-                        break;
+                        MostrarLivro();                        
+                    break;
                     case 3:
+                        // Metodo que inicializa a tela de adicionar um livro
                         AdicionarLivro();
                         break;
                     case 4:
+                        // Metodo que inicializa a tela de adicionar um usuario
                         AdicionarUsuario();
                         break;
                     case 5:
-                        while (!RealizaLoginSistema())
-                            Console.WriteLine("Login e senha inválidos");
-                        break;
-                    case 6:
+                        //Metodo que inicializa a tela para remover um usuário.
                         RemoverUsuarioPeloID();
                         break;
-
-                    default:
+                    case 6:
+                        RemoverLivroPorID();
                         break;
+                    case 7:
+                        {
+                            //Realiza o LOGOFF do sistema
+                            Console.Clear();
+                            LoginDoSistema();
+                        }
+                    break;
+
+                default: break;
+
                 }
+                // Aqui vamos pegar número digitado
+                // Executar próxima função
+
             }
         }
+
+        private static void RemoverLivroPorID()
+        {
+            Console.WriteLine("Remover o livro pelo ID no sistema");
+            // Metodo que mostra os livros criado anteriormente assim facilitando o usuario informar o ID correto para desativar
+            MostrarLivro();
+
+            Console.WriteLine("Informe o ID para desativar de sistema:");
+            var livroID = int.Parse(Console.ReadLine());
+
+            // Aqui chamamos RemoverLivroPorID da nossa classe que controla os livros do sistema.
+            livrosController.RemoverLivroPorID(livroID);
+
+            // Informamos que o livro foi desativado com sucesso.
+            Console.WriteLine("Livro desativado com sucesso.");
+            Console.ReadKey(true);
+
+        }
+
+        private static void RemoverUsuarioPeloID()
+        {
+            Console.WriteLine("Remover o usuário pelo ID no sistema");
+            // Metodo que mostra os osoarios criado anteriormente assim facilitando o usuario informar o ID correto para desativar
+            MostrarUsuarios();
+
+            Console.WriteLine("Informe o ID para desativar de sistema:");
+            var usuarioID = int.Parse(Console.ReadLine());
+
+            // Aqui chamamos RemoverUsuarioPorID da nossa classe que conrola os usuarios do sistema.
+            usuariosController.RemoverUsuarioPorID(usuarioID);
+
+            // Infomramos que o usuario foi desativado com sucesso.
+            Console.WriteLine("Usuário desativado com sucesso.");
+            Console.ReadKey(true);
+
+        }
+
         /// <summary>
-        /// Método que adiciona o usuário 
+        /// Metodo que adiciona dentro de nossa lista um novo login e senha de usuário.
         /// </summary>
         private static void AdicionarUsuario()
         {
             Console.WriteLine("Cadastrar usuário dentro do sistema!");
-
             Console.WriteLine("Informe um Login:");
             var loginUsuario = Console.ReadLine();
-
-            Console.WriteLine("informe uma senha:");
+            Console.WriteLine("Informe uma Senha:");
             var senhaUsuario = Console.ReadLine();
-
-            usuarioController.AdicionarUsuario(new Usuario()
+            usuariosController.AdicionarUsuario(new Usuario()
             {
                 Login = loginUsuario,
                 Senha = senhaUsuario
             });
 
-            Console.WriteLine("Usuário cadastrado com sucesso!");
-            Console.ReadKey();
+            Console.WriteLine("Usuário e senha cadastrados com sucesso!");
+            Console.ReadKey(true);
+
         }
-             
+
+
         /// <summary>
-        /// Metodo que adiciona dentro de nossa lista um novo registro de livro
+        /// Metodo que adiciona dentro de nossa lista um novo registro de livro.
         /// </summary>
         private static void AdicionarLivro()
         {
-            //Identificamos que o mesmo esta na parte de cadas,tro de livros do sistema
-            Console.WriteLine("Cadastrar livro dentro do sistema!");
-            //Informamos que para dar continuidade ele deve informar um nome para o livro
+            // Identificamos que o mesmo esta na parte de cadastro de livros do sistema.
+            Console.WriteLine("Cadastrar livro dentro do sistema:");
+            // Informamos que para dar continuidade ele deve informar um nome para o livro.
             Console.WriteLine("Nome do livro para cadastro:");
-            //Obtemos esta informação do usuario
+            //Obtemos esta informação do usuario.
             var nomeDoLivro = Console.ReadLine();
-            //"livrosController" livros controle e nosso "objeto" em memoria
-            //Com isso temos disponivel nele ferramentas que nos ajudam a realizar as tarefas
-            //como adicionar um item a nossa lista de livros
+            // "livrosController" livros controle e nosso "objeto" em memoria.
+            // Com isso temos disponível nele ferramentas que nos ajudam a realizar as tarefas como adicionar um item a nossa lista de livros.
             livrosController.AdicionarLivro(new Livro()
             {
-                //Aqui "Atribuimos" o nome que demos ao livro na propriedade Nome de nosso livro
+                // Aqui "Atribuimos" o nome que demos ao livro na propriedade Nome de nosso livro
                 //com o sinal de apenas um "=" temos atribuição, passagem de valor
-                Nome = nomeDoLivro
-            });
-            //Indico que finalizamos o processo de cadastro do livro, assim o usuario já sabe 
-            //que o mesmo foi realizado e sem erros
-            Console.WriteLine("Livro cadastrado com sucesso!");
-            //ReadKey apenas para que ele visualize esta informação
-            Console.ReadKey();
+                Nome = nomeDoLivro,
+                                
+            }) ;
+
+            // Indico que finalizamos o processo de cadastro do livro, assim o usuário já sabe
+            // que o mesmo foi realizado e sem erros
+            Console.WriteLine("Livro cadastrado com sucesso");
+            // ReadKey apenas para que ele visualize esta infomração.
+            Console.ReadKey(true);
         }
 
+
         /// <summary>
-        /// Metodo para mostrar a lista de usuarios já cadastrados no sistema
+        /// Realiza o loop de condição de verificação do login e senha.
         /// </summary>
-        private static void MostrarUsuarios()
+        public static void LoginDoSistema()
         {
-            //Aqui andamos pela lista de usuarios e mostramos ela no console
-            usuarioController.RetornaListaDeUsuarios().ForEach(i =>
-            Console.WriteLine($"Id: {i.Id} Login usuário:{i.Login}"));
-
-            Console.ReadKey();
+            while (!RealizaLoginSistema())
+            {
+                Console.Clear();
+                Console.WriteLine("Login e senha inválidos");
+            }
         }
 
         /// <summary>
-        /// Metodo que mostra os livros já cadastrados em nossa lista
+        /// Metodo que realiza os procedimentos completos de login dentro do sistema como solicitação de login e senha pelo console, assim
+        /// como as respectivas validações que o mesmo precisa para entrar no sistema.
         /// </summary>
-        private static void MostrarLivro()
-        {
-
-            livrosController.RetornarListaDeLivros().ForEach(i => 
-            //Para cada livro cadastrado temos a demostração no console por esta parte
-            Console.WriteLine($"ID: {i.Id} ------ Nome do livro:{i.Nome}"));
-
-            Console.ReadKey();
-        }
-
-        /// <summary>
-        /// Metodo que realiza os procedimento complestos de login dentro do 
-        /// sistema como solicitação de login e senha pelo console assim como a 
-        /// respectivas validações que o mesmo precisa para entrar no sistema
-        /// </summary>
-        /// <returns>Retorna verdadeiro quando o login e senha informados
-        /// estiverem corretos.</returns>
+        /// <returns>Retorna verdadeiro quando login e senha informados estiverem corretos.</returns>
         private static bool RealizaLoginSistema()
         {
-            Console.Clear();
+            
             //Informamos o que é preciso para entrar no sistema
-            Console.WriteLine("Informe seu login e senha para acessar o sistema:");
+            Console.WriteLine("Informe seu login e senha para acessar:");
 
             //Informamos no console que precisamos do Login do usuario
             Console.WriteLine("Login:");
@@ -181,25 +223,37 @@ namespace InterfaceBiblioteca
             var senhaDoUsuario = Console.ReadLine();
 
             //Validamos o login de maneira duvidosa
-             return usuarioController.LoginSistema(new Usuario()
+            return usuariosController.LoginSistema(new Usuario()
             {
                 Login = loginDoUsuario,
                 Senha = senhaDoUsuario
-            }); 
+            });
+            
+
         }
 
-        private static void RemoverUsuarioPeloID()
+
+        /// <summary>
+        /// Metodo que mostra os livros já cadastrados em nossa lista
+        /// </summary>
+        private static void MostrarLivro()
         {
-            Console.WriteLine("Remover o usuário pelo ID no sistema!");
-            //Método que mostra o usuário
-            MostrarUsuarios();
-            Console.WriteLine("Informe o ID para desativar do sistema:");
-            var usuarioId = int.Parse(Console.ReadLine());
-            usuarioController.RemoverUsuarioPorId(usuarioId);
-            Console.WriteLine("Usuário desativado com sucesso");
-            Console.ReadKey();
-
+            //Para cada livro cadastrado temos a demostração no console por esta parte
+            livrosController.RetornaListaDeLivros().ForEach(i=>
+            Console.WriteLine($"\r\nO livro selecionado é: {i.Nome} e o seu ID é {i.Id}."));
+            Console.ReadKey(true);
         }
 
+
+        /// <summary>
+        /// Metodo que mostra os usuarios já cadastrados em nossa lista
+        /// </summary>
+        private static void MostrarUsuarios()
+        {
+            //Para cada usuario cadastrado temos a demostração no console por esta parte
+            usuariosController.RetornaListadeUsuarios().ForEach(i=>
+            Console.WriteLine($"\r\nO usuário selecionado é: O ID é {i.Id}, p Login é {i.Login}, com a senha {i.Senha}."));
+            Console.ReadKey(true);
+        }
     }
 }
