@@ -12,7 +12,7 @@ namespace SistemaCarros.Model
         /// <summary>
         /// Lista de Carros
         /// </summary>
-        private List<Carro> ListaDeCarros { get; set; }
+        public List<Carro> ListaDeCarros { get; set; }
         /// <summary>
         /// Adição das informações à lista
         /// </summary>
@@ -36,7 +36,7 @@ namespace SistemaCarros.Model
         /// <summary>
         /// Instaciamento público da lista
         /// </summary>
-        public List<Carro> ListaDeCarrosPublica { get { return ListaDeCarros; } }
+        
 
     }
 }

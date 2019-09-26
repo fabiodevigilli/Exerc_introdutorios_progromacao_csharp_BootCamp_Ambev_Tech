@@ -13,7 +13,7 @@ namespace SistemaCarros.Controller
 
         public List<Carro> GetCarros()
         {
-            return sistemaCarrosContext.ListaDeCarrosPublica;
+            return sistemaCarrosContext.ListaDeCarros;
         }
     }
     
