@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercício.Model
+namespace SistemaDeVendas.Model
 {
     public class VendasContext
     {
-        private List<VendasModel> ListaDeVendas { get; set; }
+   
+        public List<VendasModel> ListaDeVendas { get; set; }
 
+        /// <summary>
+        /// Dados da lista
+        /// </summary>
         public VendasContext()
         {
             #region Dados

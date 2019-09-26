@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercício.Model
+namespace SistemaDeVendas.Model
 {
+
     public class VendasModel
     {
         public int ID { get; set; }
