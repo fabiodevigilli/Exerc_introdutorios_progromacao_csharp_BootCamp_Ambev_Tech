@@ -32,10 +32,13 @@ namespace SistemaDeVendas
             while (opcaoEscolhida != 0)
             {
                 Console.Clear();
-                Console.WriteLine(@"Informe uma opção do menu:
+                Console.WriteLine(@"                ***************** SISTEMA DE VENDAS *****************
+Informe uma opção do menu:
 1 - Listar Informações de Vendas
 2 - Listar Vendas por período");
-                opcaoEscolhida = int.Parse(Console.ReadKey().KeyChar.ToString());
+            
+                    opcaoEscolhida = int.Parse(Console.ReadKey().KeyChar.ToString());
+         
                 switch (opcaoEscolhida)
                 {
                     case 1:
@@ -60,6 +63,7 @@ namespace SistemaDeVendas
         private static void MostrarDadosPorPeriodo()
         {
             var mesEscolhido = 0;
+            Console.WriteLine("                     ******************* VENDAS POR PERÍODO *******************");
             Console.WriteLine(@"Informe o mês do qual você deseja obter as informações de vendas. Digite números de 1 a 12, conforme mês desejado:");
             mesEscolhido = int.Parse(Console.ReadLine());
             vendasController.VendasPeriodo(mesEscolhido).ForEach(x => FormataDados(x));
@@ -74,6 +78,7 @@ namespace SistemaDeVendas
         /// </summary>
         private static void MostrarTodosOsDados()
         {
+            Console.WriteLine("                     ******************* LISTA GERAL DE VENDAS *******************");
             vendasController.contextDB.ListaDeVendas.ForEach(x => FormataDados(x));
             Console.ReadKey();
         }
