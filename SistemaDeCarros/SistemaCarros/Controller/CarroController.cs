@@ -9,11 +9,11 @@ namespace SistemaCarros.Controller
 {
     public class CarroController
     {
-        SistemaCarrosContext carrosContext = new SistemaCarrosContext();
+        SistemaCarrosContext sistemaCarrosContext = new SistemaCarrosContext();
 
         public List<Carro> GetCarros()
         {
-            return carrosContext.ListaDeCarrosPublica;
+            return sistemaCarrosContext.ListaDeCarrosPublica;
         }
     }
     
