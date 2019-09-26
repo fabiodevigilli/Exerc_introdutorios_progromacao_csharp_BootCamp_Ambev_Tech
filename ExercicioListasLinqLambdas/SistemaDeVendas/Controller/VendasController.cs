@@ -38,7 +38,7 @@ namespace SistemaDeVendas.Controller
         /// <returns></returns>
         public double SomaVendas(int mesEscolhido)
         {
-            return contextDB.ListaDeVendas.Where(x => x.DataVenda.Month == mesEscolhido).Sum(x => x.Valor);
+            return contextDB.ListaDeVendas.Where(x => x.DataVenda.Month == mesEscolhido).Sum(x => (x.Valor*x.Quantidade));
 
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace SistemaDeVendas.Controller
         /// <returns></returns>
         public List<VendasModel> ListaDeVendas()
         {
-            return contextDB.ListaDeVendas.ToList<VendasModel>();
+            return contextDB.ListaDeVendas;
         }
 
 

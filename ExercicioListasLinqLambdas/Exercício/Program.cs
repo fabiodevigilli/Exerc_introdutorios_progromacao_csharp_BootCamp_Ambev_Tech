@@ -16,10 +16,7 @@ namespace SistemaDeVendas
         static VendasController vendasController = new VendasController();
         static void Main (string[] args)
         {
-
             Menu();
-          
-
         }
 
         /// <summary>
@@ -36,9 +33,11 @@ namespace SistemaDeVendas
 Informe uma opção do menu:
 1 - Listar Informações de Vendas
 2 - Listar Vendas por período");
-            
-                    opcaoEscolhida = int.Parse(Console.ReadKey().KeyChar.ToString());
-         
+
+                //   opcaoEscolhida = int.Parse(Console.ReadKey().KeyChar.ToString());
+                int.TryParse(Console.ReadKey().KeyChar.ToString(), out opcaoEscolhida);
+
+
                 switch (opcaoEscolhida)
                 {
                     case 1:
@@ -88,8 +87,8 @@ Informe uma opção do menu:
         /// <param name="vendasModel"></param>
         private static void FormataDados(VendasModel vendasModel)
         {
-            string template = "ID: {0,3} Nome: {1,-50} Valor: {3,7} Data: {2,10}";
-            string TextoFormatado = string.Format(template, vendasModel.ID, vendasModel.NomeCarro, vendasModel.DataVenda.ToShortDateString(), vendasModel.Valor.ToString("c"));
+            string template = "ID: {0,3} Nome: {1,-50} Valor: {3,7} Quantidade {4,5} Data: {2,10}";
+            string TextoFormatado = string.Format(template, vendasModel.ID, vendasModel.NomeCarro, vendasModel.DataVenda.ToShortDateString(), vendasModel.Valor.ToString("c"), vendasModel.Quantidade);
         Console.WriteLine(TextoFormatado);
         }
 
