@@ -68,25 +68,22 @@ namespace ListagemDeCervejas.Controller
                     {
 
                         
-                        qtdAlcoolIngerido = (((sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Alcool)) / 100) *
-                            (sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Litros) * 1000) * 0.79)
-                         / (peso * 0.7);
+                        qtdAlcoolIngerido = sistemaCervejaContext.ListaDeCervejas.Sum((x => (((x.Litros) * 1000)*
+                        (x.Alcool)/100) * (0.79))) / (peso * 0.7);
                         break;
 
                     }
                 case '2':
                     {
-                        qtdAlcoolIngerido = (((sistemaCervejaContext.ListaDeCervejas.Average(x => x.Alcool)) / 100) *
-                            (sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Litros) * 1000) * 0.79)
-                         / (peso * 0.6);
+                        qtdAlcoolIngerido = sistemaCervejaContext.ListaDeCervejas.Sum((x => (((x.Litros) * 1000) *
+                      (x.Alcool) / 100) * (0.79))) / (peso * 0.6);
                         break;
 
                     }
                 case '3':
                     {
-                        qtdAlcoolIngerido = (((sistemaCervejaContext.ListaDeCervejas.Average(x => x.Alcool)) / 100) *
-                            (sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Litros) * 1000) * 0.79)
-                         / (peso * 1.1);
+                        qtdAlcoolIngerido = sistemaCervejaContext.ListaDeCervejas.Sum((x => (((x.Litros) * 1000) *
+                       (x.Alcool) / 100) * (0.79))) / (peso * 1.1);
                         break;
 
                     }
