@@ -54,17 +54,20 @@ namespace ListagemDeCervejas.Controller
         /// Case 3 = Homem ou mulher que ingeriram durante a refeição
         /// </summary>
         /// <param name="peso">peso informado pelo usuário </param>
-        /// <param name="respostaMenu">booleano, verdadeiro = seria preso, falso = não seria preso</param>
+        /// <param name="respostaMenu">Informa a resposta o usuário</param>
         /// <returns></returns>
         public bool TesteAlcool(double peso, char respostaMenu)
         {
             double qtdAlcoolIngerido = 0;
             bool flagrante;
+            
 
             switch (respostaMenu)
             {
                 case '1':
                     {
+
+                        
                         qtdAlcoolIngerido = (((sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Alcool)) / 100) *
                             (sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Litros) * 1000) * 0.79)
                          / (peso * 0.7);
@@ -73,7 +76,7 @@ namespace ListagemDeCervejas.Controller
                     }
                 case '2':
                     {
-                        qtdAlcoolIngerido = (((sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Alcool)) / 100) *
+                        qtdAlcoolIngerido = (((sistemaCervejaContext.ListaDeCervejas.Average(x => x.Alcool)) / 100) *
                             (sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Litros) * 1000) * 0.79)
                          / (peso * 0.6);
                         break;
@@ -81,7 +84,7 @@ namespace ListagemDeCervejas.Controller
                     }
                 case '3':
                     {
-                        qtdAlcoolIngerido = (((sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Alcool)) / 100) *
+                        qtdAlcoolIngerido = (((sistemaCervejaContext.ListaDeCervejas.Average(x => x.Alcool)) / 100) *
                             (sistemaCervejaContext.ListaDeCervejas.Sum(x => x.Litros) * 1000) * 0.79)
                          / (peso * 1.1);
                         break;
