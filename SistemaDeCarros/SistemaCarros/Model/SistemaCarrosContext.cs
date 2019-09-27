@@ -33,9 +33,7 @@ namespace SistemaCarros.Model
 
 
         }
-        /// <summary>
-        /// Instaciamento público da lista
-        /// </summary>
+        
         
 
     }

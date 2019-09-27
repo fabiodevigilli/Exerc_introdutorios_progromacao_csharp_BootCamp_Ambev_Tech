@@ -11,6 +11,10 @@ namespace SistemaCarros.Controller
     {
         SistemaCarrosContext sistemaCarrosContext = new SistemaCarrosContext();
 
+        /// <summary>
+        /// Retorna a lista de Carros
+        /// </summary>
+        /// <returns></returns>
         public List<Carro> GetCarros()
         {
             return sistemaCarrosContext.ListaDeCarros;
